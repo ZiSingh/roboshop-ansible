@@ -1,5 +1,5 @@
 - name: Setup Frontend
-  hosts: frontend-dev.erdevops.store
+  hosts: all
   become: yes
   tasks:
     - name: Installing Nginx Server
