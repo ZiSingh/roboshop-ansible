@@ -1,0 +1,16 @@
+#echo -e "${color} Load Schema ${nocolor}"
+#mongo --host mongodb-dev.devopsb73.store <${app_path}/schema/$component.js  &>>$log_file
+#stat_check $?
+#
+- name: Copy mongoDB Repo file
+  ansible.builtin.copy:
+    src: mongodb.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: Install MongoDB client
+  ansible.builtin.yum:
+    name: mongodb-org-shell
+    state: installed
+
+- name: Load schema
+  ansible.builtin.shell: mongo --host mongodb-dev.erdevops.store </app/schema/{{ component }}.js
