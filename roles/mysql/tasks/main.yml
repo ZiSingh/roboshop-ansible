@@ -1,5 +1,5 @@
 - name: Disable MySQl default version
-  ansible.builting.shell:yum module disable mysql -y
+  ansible.builtin.shell: yum module disable mysql -y
 
 - name: Copy MySQL repo file
   ansible.builtin.copy:
