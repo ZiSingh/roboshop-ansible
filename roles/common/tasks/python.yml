@@ -4,7 +4,7 @@
       -  python36
       -  gcc
       -  python3-devel
-   state: installed
+    state: installed
 
 - name: App Pre-requisites
   ansible.builtin.import_tasks:
