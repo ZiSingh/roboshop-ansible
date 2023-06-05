@@ -1,0 +1,26 @@
+- name: Installing GoLang
+  ansible.builtin.yum:
+    name: golang
+    state: latest
+
+- name: App Pre-requisites
+  ansible.builtin.import_tasks:
+    file: app_presetup.yml
+
+- name: Start {{ component }} Service
+  ansible.builtin.systemd:
+    name: "{{ component }}"
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
+
+
+#    Load the service.
+#
+#    systemctl daemon-reload
+#
+#    INFO
+#    This above command is because we added a new service, We are telling systemd to reload so it will detect new service.
+#
+
+
