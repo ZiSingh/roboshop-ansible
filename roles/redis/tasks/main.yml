@@ -20,3 +20,4 @@
 #systemctl enable redis  &>>/tmp/roboshop.log
 #systemctl restart redis  &>>/tmp/roboshop.log
 #stat_check $?
+
